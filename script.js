@@ -1,16 +1,33 @@
-// script.js
-const countdown = document.getElementById('countdown');
-const targetDate = new Date("YYYY-MM-DD");  // Replace with his birthday date
+function startSurprise() {
+    // Display the hidden message
+    document.getElementById('message').style.display = 'block';
 
-function updateCountdown() {
-    const now = new Date();
-    const timeLeft = targetDate - now;
-    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-    countdown.innerHTML = `${days} days left!`;
+    // Fireworks animation
+    const fireworksContainer = document.getElementById('fireworks');
+    for (let i = 0; i < 50; i++) {
+        const firework = document.createElement('div');
+        firework.className = 'firework';
+        firework.style.left = Math.random() * 100 + 'vw';
+        firework.style.top = Math.random() * 100 + 'vh';
+        firework.style.animationDelay = Math.random() * 2 + 's';
+        fireworksContainer.appendChild(firework);
+    }
 }
 
-function revealGift() {
-    document.getElementById('gift').style.display = 'block';
-}
-
-setInterval(updateCountdown, 1000 * 60 * 60 * 24);  // Update every day
+// Style the fireworks with CSS animations
+document.head.insertAdjacentHTML('beforeend', `
+    <style>
+        .firework {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: radial-gradient(circle, #ff6347, transparent);
+            border-radius: 50%;
+            animation: explode 1.5s ease-out forwards;
+        }
+        @keyframes explode {
+            from { transform: scale(0); opacity: 1; }
+            to { transform: scale(20); opacity: 0; }
+        }
+    </style>
+`);

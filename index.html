@@ -1,21 +1,21 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday!</title>
+    <title>Surprise Birthday Card</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Happy Birthday, [Name]!</h1>
-        <p>Countdown to your special day:</p>
-        <div id="countdown"></div>
-        <button onclick="revealGift()">Open Your Gift 🎁</button>
-        <div id="gift" style="display:none;">
-            <p>Your personalized message goes here!</p>
-        </div>
+    <div class="card" onclick="startSurprise()">
+        <h1>🎉 Click Here 🎉</h1>
+        <p>To reveal a birthday surprise!</p>
+    </div>
+    <div id="fireworks" class="fireworks"></div>
+    <div id="message" class="message" style="display:none;">
+        <h2>Happy Birthday, [Name]!</h2>
+        <p>You make every day brighter. Here's to you!</p>
+        <img src="your-photo.jpg" alt="Surprise Photo" class="photo">
     </div>
     <script src="script.js"></script>
 </body>
