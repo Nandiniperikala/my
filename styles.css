@@ -1,0 +1,15 @@
+/* styles.css */
+.container {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin-top: 20%;
+}
+#countdown {
+    font-size: 24px;
+    color: #FF6347;
+}
+#gift {
+    font-size: 18px;
+    color: #4682B4;
+    margin-top: 20px;
+}
